@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "UEYoutubeStreamer",
+	"Description": "A plugin that lets you stream Youtube videos within Unreal Engine",
+	"Category": "Other",
+	"CreatedBy": "Aryamaan Pratap Singh",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": true,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "UEYoutubeStreamer",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
