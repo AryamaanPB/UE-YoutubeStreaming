@@ -1,0 +1,3 @@
+https://github.com/FFmpeg/FFmpeg
+https://github.com/yt-dlp/yt-dlp
+https://ytdl-org.github.io/youtube-dl/download.html
