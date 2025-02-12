@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "StreamingTest.h"
+#include "MediaURLFetcher.h"
 #include <iostream>
 #include <cstdio>
 #include <memory>
@@ -32,8 +32,9 @@ std::string execCommand(const std::string& command) {
 
     return result;
 }
+
 // Sets default values
-AStreamingTest::AStreamingTest()
+AMediaURLFetcher::AMediaURLFetcher()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -41,28 +42,27 @@ AStreamingTest::AStreamingTest()
 }
 
 // Called when the game starts or when spawned
-void AStreamingTest::BeginPlay()
+void AMediaURLFetcher::BeginPlay()
 {
 	Super::BeginPlay();
-
+	
     std::string command = "yt-dlp -f best -g " + std::string(TCHAR_TO_UTF8(*InVideoURL));
     std::string output = execCommand(command);
 
-    if (!output.empty()) 
+    if (!output.empty())
     {
         OutVideoURL = FString(output.c_str()); // Convert std::string to FString
         UE_LOG(LogTemp, Warning, TEXT("Direct Video URL: %s"), *OutVideoURL);
         OnFetchedURL.Broadcast(OutVideoURL);
     }
-    else 
+    else
     {
         UE_LOG(LogTemp, Error, TEXT("Failed to retrieve video URL."));
     }
-	
 }
 
 // Called every frame
-void AStreamingTest::Tick(float DeltaTime)
+void AMediaURLFetcher::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 

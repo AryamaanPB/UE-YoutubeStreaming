@@ -4,18 +4,18 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "StreamingTest.generated.h"
+#include "MediaURLFetcher.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnURLFetched, FString, RawVideoURL);
 
 UCLASS()
-class UEYOUTUBESTREAMER_API AStreamingTest : public AActor
+class UEYOUTUBESTREAMER_API AMediaURLFetcher : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AStreamingTest();
+	AMediaURLFetcher();
 
 protected:
 	// Called when the game starts or when spawned
@@ -35,4 +35,5 @@ public:
 
 	UPROPERTY(BlueprintAssignable, Category = "UEYoutubeStreaming")
 	FOnURLFetched OnFetchedURL;
+
 };

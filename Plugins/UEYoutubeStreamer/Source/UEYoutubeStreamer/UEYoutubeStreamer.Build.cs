@@ -26,9 +26,6 @@ public class UEYoutubeStreamer : ModuleRules
 			new string[]
 			{
 				"Core",
-				"UEYoutubeStreamerLibrary",
-				"Projects",
-                "Engine",
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -37,6 +34,10 @@ public class UEYoutubeStreamer : ModuleRules
 		PrivateDependencyModuleNames.AddRange(
 			new string[]
 			{
+				"CoreUObject",
+				"Engine",
+				"Slate",
+				"SlateCore",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
